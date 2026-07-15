@@ -81,11 +81,13 @@ On one CPU core this takes roughly 15-20 minutes. Swap `data.py` for a real MNIS
 (e.g. `torchvision.datasets.MNIST`) and bump `--img_size` to run this at paper-scale on a
 machine with GPU + internet access — no other code changes needed.
 
-## Comparison to a ResNet reproduction
+## Results
 
-| | ResNet (image classification) | This DDPM |
-|---|---|---|
-| Objective | single forward pass, cross-entropy | iterative stochastic process, variational-bound-derived loss |
-| Training | one loss term per example | noise-prediction loss at a *random timestep* per example, every step |
-| Inference | one forward pass | ~150 sequential forward passes per generated image |
-| What can go subtly wrong | overfitting, learning rate | noise schedule shape, variance choice at sampling, timestep embedding scale, loss weighting — several of these fail silently (model trains, loss goes down, but samples are garbage) |
+### Denoising Trajectory
+![Denoising Trajectory](denoising_trajectory.png)
+
+### Loss Curve
+![Loss Curve](loss_curve.png)
+
+### Training Progression
+![Training Progression](training_progression.png)
