@@ -11,7 +11,7 @@ and a cross-entropy loss, you have to get a *stochastic process* right (a Markov
 noising steps and its learned reverse), derive the training objective from a variational bound,
 and implement an iterative sampler that has to run correctly hundreds of times per image.
 
-## What's actually implemented
+## What's actually implemented 
 
 | Paper concept | Where it lives |
 |---|---|
